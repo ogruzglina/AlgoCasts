@@ -7,6 +7,7 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+// for
 // function palindrome(str) {
 //     for (let i = 0; i < str.length/2 ; i++) {
 //         if (str[i] !== str[str.length - 1 - i]) {
@@ -18,20 +19,29 @@
 //     return true;
 // }
 
+
+// recursive 
+// function palindrome(str) {
+//     if (str.length === 1) {
+//         return true;
+//     }
+
+//     if (str.length === 2) {
+//         return str[0] === str[str.length-1] // ?  true : false;
+//     }
+
+
+//     return str[0] !== str[str.length-1] 
+//             ? false 
+//             : palindrome(str.slice(1, str.length-1));
+
+// }
+
+// reverse all string and compare
 function palindrome(str) {
-    if (str.length === 1) {
-        return true;
-    }
+    const reversedStr = str.split('').reverse().join('');
 
-    if (str.length === 2) {
-        return str[0] === str[str.length-1] ?  true : false;
-    }
-
-
-    return str[0] !== str[str.length-1] 
-            ? false 
-            : palindrome(str.slice(1, str.length-1));
-
+    return str === reversedStr;
 }
 
 //module.exports = palindrome("hannah");
