@@ -7,18 +7,32 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
+// function palindrome(str) {
+//     for (let i = 0; i < str.length/2 ; i++) {
+//         if (str[i] !== str[str.length - 1 - i]) {
+//             console.log('false')
+//             return false;
+//         }
+//     }
+//     console.log('true')
+//     return true;
+// }
 
-    for (let i = 0; i < str.length/2 ; i++) {
-        if (str[i] !== str[str.length - 1 - i]) {
-            console.log('false')
-            return false;
-        }
+function palindrome(str) {
+    if (str.length === 1) {
+        return true;
     }
-    console.log('true')
-    return true;
+
+    if (str.length === 2) {
+        return str[0] === str[str.length-1] ?  true : false;
+    }
+
+
+    return str[0] !== str[str.length-1] 
+            ? false 
+            : palindrome(str.slice(1, str.length-1));
 
 }
 
-//module.exports = palindrome("Fish hsiF");
+//module.exports = palindrome("hannah");
 module.exports = palindrome;
